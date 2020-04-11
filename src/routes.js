@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Account from './pages/Account';
@@ -9,38 +9,38 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Tab = createBottomTabNavigator();
 
 const settingsTab = (route) => ({
-    tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
+  tabBarIcon: ({focused, color, size}) => {
+    let iconName;
 
-        if (route.name === 'Home') {
-            iconName = 'home';
-        } else if (route.name === 'Cart') {
-            iconName = 'shopping-cart';
-        } else if (route.name === 'Account') {
-            iconName = 'user';
-        } else if (route.name == 'Explore'){
-            iconName = 'search'
-        }
+    if (route.name === 'Home') {
+      iconName = 'home';
+    } else if (route.name === 'Cart') {
+      iconName = 'shopping-cart';
+    } else if (route.name === 'Account') {
+      iconName = 'user';
+    } else if (route.name == 'Explore') {
+      iconName = 'search';
+    }
 
-        return <Icon name={iconName} size={size} color={color} />;
-    },
+    return <Icon name={iconName} size={size} color={color} />;
+  },
 });
 
 export default function Routes() {
-    return (
-        <Tab.Navigator
-            screenOptions={({ route }) => settingsTab(route)}
-            tabBarOptions={{
-                activeTintColor: '#8AB4F8',
-                inactiveTintColor: '#C3C3C3',
-                style: {
-                    backgroundColor: '#333',
-                }
-            }}>
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Explore" component={Explore} />
-            <Tab.Screen name="Cart" component={Cart} />
-            <Tab.Screen name="Account" component={Account} />
-        </Tab.Navigator>
-    );
+  return (
+    <Tab.Navigator
+      screenOptions={({route}) => settingsTab(route)}
+      tabBarOptions={{
+        activeTintColor: '#8AB4F8',
+        inactiveTintColor: '#C3C3C3',
+        style: {
+          backgroundColor: '#333',
+        },
+      }}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Explore" component={Explore} />
+      <Tab.Screen name="Cart" component={Cart} />
+      <Tab.Screen name="Account" component={Account} />
+    </Tab.Navigator>
+  );
 }
