@@ -3,13 +3,13 @@ import {View, Text} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-function Home() {
+function Explore() {
   return (
       <View>
-        <Text>Home!</Text>
-        <Icon name="home" size={20} color="#7159c2" />
+        <Text>Explore!</Text>
+        <Icon name="search" size={20} color="#7159c2" />
       </View>
   );
 }
 
-export default Home;
+export default Explore;

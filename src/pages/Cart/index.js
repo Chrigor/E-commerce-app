@@ -7,7 +7,7 @@ function Cart() {
   return (
       <View>
         <Text>Cart!</Text>
-        <Icon name="rocket" size={20} color="#7159c2" />
+        <Icon name="shopping-cart" size={20} color="#7159c2" />
       </View>
   );
 }
