@@ -1,17 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { ThemeProvider } from 'styled-components';
 
 import Routes from './src/routes';
+
+
+const theme = {
+  color: '#e02041',
+  background: '#fff'
+}
 
 function App() {
   return (
     <NavigationContainer>
+      <ThemeProvider theme={theme}>
         <Routes />
+      </ThemeProvider>
     </NavigationContainer>
   );
 }

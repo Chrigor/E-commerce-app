@@ -31,10 +31,10 @@ export default function Routes() {
     <Tab.Navigator
       screenOptions={({route}) => settingsTab(route)}
       tabBarOptions={{
-        activeTintColor: '#8AB4F8',
-        inactiveTintColor: '#C3C3C3',
+        activeTintColor: '#FFF',
+        inactiveTintColor: '#aaa',
         style: {
-          backgroundColor: '#333',
+          backgroundColor: '#e02041',
         },
       }}>
       <Tab.Screen name="Home" component={Home} />
