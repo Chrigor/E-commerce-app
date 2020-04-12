@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export const Container = styled.View`
     flex:1;
@@ -7,10 +8,19 @@ export const Container = styled.View`
 `
 
 export const SearchInput = styled.TextInput`
-    width: 100%;
-    height: 32px;
+    flex:1;
+    height: 42px;
     border: 1px solid #EBF0FF;
     padding: 5px 7px;
-    color: ${props => props.theme.color}
+`
 
+export const Header = styled.View`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+`
+
+export const IconMargin = styled(Icon)`
+    margin-left:12px;
 `
