@@ -24,3 +24,9 @@ export const Header = styled.View`
 export const IconMargin = styled(Icon)`
     margin-left:12px;
 `
+
+export const ContainerSliders = styled.View`
+    height: 300px;
+    width: 100%;
+    background: blue;
+`
