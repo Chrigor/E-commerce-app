@@ -19,6 +19,7 @@ export const Header = styled.View`
     flex-direction:row;
     align-items:center;
     justify-content:space-around;
+    padding: 0px 0px 10px 0px ;
 `
 
 export const IconMargin = styled(Icon)`
@@ -26,7 +27,7 @@ export const IconMargin = styled(Icon)`
 `
 
 export const ContainerSliders = styled.View`
-    height: 300px;
+    height: 250px;
     width: 100%;
     background: blue;
 `
