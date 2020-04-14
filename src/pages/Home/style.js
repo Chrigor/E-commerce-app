@@ -34,7 +34,7 @@ export const ContainerSliders = styled.View`
 
 export const ContainerCategoria = styled.View`
     display:flex;
-    height:50px;
+    height:150px;
     width: 100%;
     margin-top:10px;
 `
@@ -57,4 +57,5 @@ export const HeaderCategory = styled.View`
     justify-content:space-between;
     align-items:center;
     width: 100%;
+    margin-bottom:10px;
 `
