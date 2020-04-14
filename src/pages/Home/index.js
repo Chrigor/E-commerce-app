@@ -22,7 +22,7 @@ import {
   ContainerIconCategory,
   TextCategory,
   ProductContainer,
-  ContainerFlashSale,
+  ContainerSale,
   ImageProduct
 } from './style';
 
@@ -100,7 +100,7 @@ function Home() {
 
   function _renderItem({ item, index }) {
     return (
-      <ContainerImageSlider>
+      <ContainerImageSlider onPress={() => alert(item.title)} activeOpacity={1}>
         <ContainerBackgroundImage source={{ uri: item.image }}>
           <TitleSlide>{item.title}</TitleSlide>
           <SubTitleSlide>{item.description}</SubTitleSlide>
@@ -138,8 +138,12 @@ function Home() {
           inlineImagePadding={25}
           placeholder="Search Product"
         />
-        <IconMargin name="heart" size={24} color="#eee" />
-        <IconMargin name="bell" size={24} color="#eee" />
+        <TouchableOpacity onPress={() => alert('Click heart')}>
+          <IconMargin name="heart" size={24} color="#ddd" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('Click bell')}>
+          <IconMargin name="bell" size={24} color="#ddd" />
+        </TouchableOpacity>
       </Header>
 
       <ContainerSliders>
@@ -186,7 +190,9 @@ function Home() {
 
         <HeaderCategory>
           <TitleCategory>Category</TitleCategory>
-          <SubTitleCategory>More Category</SubTitleCategory>
+          <TouchableOpacity onPress={() => alert('More category')} activeOpacity={0.8}>
+            <SubTitleCategory>More Category</SubTitleCategory>
+          </TouchableOpacity>
         </HeaderCategory>
 
         <SafeAreaView>
@@ -201,10 +207,12 @@ function Home() {
       </ContainerCategoria>
 
 
-      <ContainerFlashSale>
+      <ContainerSale>
         <HeaderCategory>
           <TitleCategory>Flash Sale</TitleCategory>
-          <SubTitleCategory>See more</SubTitleCategory>
+          <TouchableOpacity onPress={() => alert('See more flash sale')} activeOpacity={0.8}>
+            <SubTitleCategory>See more</SubTitleCategory>
+          </TouchableOpacity>
         </HeaderCategory>
 
         <SafeAreaView>
@@ -215,12 +223,14 @@ function Home() {
             horizontal={true}
           />
         </SafeAreaView>
-      </ContainerFlashSale>
+      </ContainerSale>
 
-      <ContainerFlashSale>
+      <ContainerSale>
         <HeaderCategory>
           <TitleCategory>Mega Sale</TitleCategory>
-          <SubTitleCategory>See more</SubTitleCategory>
+          <TouchableOpacity onPress={() => alert('See more mega sale')} activeOpacity={0.8}>
+            <SubTitleCategory>See more</SubTitleCategory>
+          </TouchableOpacity>
         </HeaderCategory>
 
         <SafeAreaView>
@@ -231,7 +241,7 @@ function Home() {
             horizontal={true}
           />
         </SafeAreaView>
-      </ContainerFlashSale>
+      </ContainerSale>
 
     </Container>
   );

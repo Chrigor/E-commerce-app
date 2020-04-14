@@ -32,7 +32,7 @@ export const ContainerSliders = styled.View`
     border: none;
 `
 
-export const ContainerImageSlider = styled.View`
+export const ContainerImageSlider = styled.TouchableOpacity`
     flex:1;
 `
 
@@ -118,10 +118,11 @@ export const ProductContainer = styled.TouchableOpacity`
     border: 1px solid #eee;
 `
 
-export const ContainerFlashSale = styled.View`
+export const ContainerSale = styled.View`
     width: 100%;
     margin-bottom: 10px;
     padding-top: 5px;
+    padding-bottom: 10px;
 `
 
 export const ImageProduct = styled.Image`
