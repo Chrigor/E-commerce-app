@@ -33,6 +33,7 @@ export default function Routes() {
       tabBarOptions={{
         activeTintColor: '#FFF',
         inactiveTintColor: '#ccc',
+        keyboardHidesTabBar:true,
         style: {
           backgroundColor: '#e02041',
         },

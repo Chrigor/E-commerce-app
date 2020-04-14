@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
     flex:1;
-    background-color:#fff;
+    background-color:rgba(255,255,255,0.7);
     padding: 15px 10px;
 `
 
@@ -32,6 +32,27 @@ export const ContainerSliders = styled.View`
     border: none;
 `
 
+export const ContainerImageSlider = styled.View`
+    flex:1;
+`
+
+export const ContainerBackgroundImage = styled.ImageBackground`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`
+
+export const TitleSlide = styled.Text`
+    font-size: 20px;
+    color: #fff;
+`
+
+export const SubTitleSlide = styled.Text`
+    font-size: 15px;
+    width: 200px;
+    color: #fff;
+`
+
 export const ContainerCategoria = styled.View`
     display:flex;
     height:150px;
@@ -58,4 +79,52 @@ export const HeaderCategory = styled.View`
     align-items:center;
     width: 100%;
     margin-bottom:10px;
+`
+
+export const CategoryButton = styled.TouchableOpacity`
+    flex:1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100px;
+`
+
+export const ContainerIconCategory = styled.View`
+    flex:1;
+    border: 1px solid #eee;
+    border-radius: 80px;
+    height: 70px;
+    width: 70px;
+    margin: 0px 10px;
+    padding: 5px; 
+    justify-content: center; 
+    align-items:center;
+`
+
+export const TextCategory = styled.Text`
+    font-size: 12px;
+    height: 20px;
+    margin: 5px;
+`
+
+export const ProductContainer = styled.TouchableOpacity`
+    flex:1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 150px;
+    width: 115px;
+    margin-left: 15px;
+    border: 1px solid #eee;
+`
+
+export const ContainerFlashSale = styled.View`
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 5px;
+`
+
+export const ImageProduct = styled.Image`
+    height:70px;
+    width: 70px;
 `

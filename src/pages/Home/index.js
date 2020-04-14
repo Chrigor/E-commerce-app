@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, FlatList, SafeAreaView } from 'react-native';
+import { View, Text, ImageBackground, FlatList, SafeAreaView, TouchableOpacity, Alert, Image } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import BackgroundImage from '../../assets/back.jpg';
 import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -11,24 +10,34 @@ import {
   Header,
   IconMargin,
   ContainerSliders,
+  ContainerImageSlider,
+  TitleSlide,
+  SubTitleSlide,
+  ContainerBackgroundImage,
   ContainerCategoria,
   TitleCategory,
   SubTitleCategory,
-  HeaderCategory
+  HeaderCategory,
+  CategoryButton,
+  ContainerIconCategory,
+  TextCategory,
+  ProductContainer,
+  ContainerFlashSale,
+  ImageProduct
 } from './style';
 
 const data = [
-  { id: 2, title: 'Hello1', description: 'usaduhsahusaduhuhasduhhausuhsaduhsdauhasd' },
-  { id: 4, title: 'Hello2', description: 'ASKDAS' },
-  { id: 5, title: 'Hello3', description: 'asdkasjd' },
-  { id: 6, title: 'Hello3', description: 'asdkasjd' },
+  { id: 2, title: 'Hello1', description: 'usaduhsahusaduhuhasduhhausuhsaduhsdauhasd', image: "https://png.pngtree.com/thumb_back/fw800/background/20190215/pngtree-blue-pure-color-simple-background-image_3724.jpg" },
+  { id: 4, title: 'Hello2', description: 'ASKDAS', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTah2GGpiEWqBoLPGbjojgQrYgRHzRaqHWhAJwW7a1-rnih-fa&usqp=CAU" },
+  { id: 5, title: 'Hello3', description: 'asdkasjd', image: "https://c4.wallpaperflare.com/wallpaper/829/213/283/red-color-simple-background-minimalism-buildings-black-art-wallpaper-preview.jpg" },
+  { id: 6, title: 'Hello3', description: 'asdkasjd', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBStLqMv5fIirCzb3ufL9eauqY7pYp6Pat0L_2pDxavVcvvPmy&usqp=CAU" },
 ];
 
 const dataCategory = [
   {
     id: 1,
     title: "T-shirts",
-    nameIcon: "home"
+    nameIcon: "percent"
   },
   {
     id: 2,
@@ -67,29 +76,57 @@ const dataCategory = [
   },
 ]
 
+const dataProductsFlashSale = [
+  { id: 1, name: "Shoes", price: 170.32, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
+  { id: 2, name: "T-Shirt", price: 50.99, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
+  { id: 3, name: "PlayStation 4", price: 1999.00, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
+  { id: 4, name: "Computador gamer", price: 1500, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
+  { id: 5, name: "Pelucia", price: 10.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
+  { id: 6, name: "Armario", price: 599, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
+]
+
+const dataProductsMegaSale = [
+  { id: 3, name: "PlayStation 4", price: 1999.00, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
+  { id: 4, name: "Computador gamer", price: 1500, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
+  { id: 6, name: "Armario", price: 599, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
+  { id: 1, name: "Shoes", price: 170.32, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
+  { id: 5, name: "Pelucia", price: 10.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
+  { id: 2, name: "T-Shirt", price: 50.99, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
+]
+
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const widthDevice = Dimensions.get('screen').width;
 
   function _renderItem({ item, index }) {
     return (
-      <View style={{ flex: 1 }}>
-        <ImageBackground source={BackgroundImage} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ fontSize: 20, color: '#fff' }}>{item.title}</Text>
-          <Text style={{ fontSize: 15, width: 200 }}>{item.description}</Text>
-        </ImageBackground>
-      </View>
+      <ContainerImageSlider>
+        <ContainerBackgroundImage source={{ uri: item.image }}>
+          <TitleSlide>{item.title}</TitleSlide>
+          <SubTitleSlide>{item.description}</SubTitleSlide>
+        </ContainerBackgroundImage>
+      </ContainerImageSlider>
     );
   }
 
   function renderCategory({ item }) {
     return (
-      <View style={{flexDirection:"column", justifyContent: "center", alignItems:"center", height: 100}}>
-        <View style={{ flex: 1, backgroundColor: "#eee", borderRadius: 80, height: 70, width: 70, marginHorizontal: 10, padding: 5, justifyContent: "center", alignItems: "center" }}>
+      <CategoryButton onPress={() => alert(item.nameIcon)}>
+        <ContainerIconCategory>
           <Icon name={item.nameIcon} size={18} color="#e02041" />
-        </View>
-        <Text style={{ fontSize: 12, height: 20, margin:5 }}>{item.nameIcon}</Text>
-      </View>
+        </ContainerIconCategory>
+        <TextCategory>{item.nameIcon}</TextCategory>
+      </CategoryButton>
+    )
+  }
+
+  function renderProduct({ item }) {
+    return (
+      <ProductContainer onPress={() => alert(item.name)}>
+        <ImageProduct style={{ height: 70, width: 70 }} source={{ uri: item.image }} />
+        <TextCategory>{item.name}</TextCategory>
+        <TextCategory>R$ {(item.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</TextCategory>
+      </ProductContainer>
     )
   }
 
@@ -162,6 +199,40 @@ function Home() {
         </SafeAreaView>
 
       </ContainerCategoria>
+
+
+      <ContainerFlashSale>
+        <HeaderCategory>
+          <TitleCategory>Flash Sale</TitleCategory>
+          <SubTitleCategory>See more</SubTitleCategory>
+        </HeaderCategory>
+
+        <SafeAreaView>
+          <FlatList
+            data={dataProductsFlashSale}
+            renderItem={renderProduct}
+            keyExtractor={item => item.id}
+            horizontal={true}
+          />
+        </SafeAreaView>
+      </ContainerFlashSale>
+
+      <ContainerFlashSale>
+        <HeaderCategory>
+          <TitleCategory>Mega Sale</TitleCategory>
+          <SubTitleCategory>See more</SubTitleCategory>
+        </HeaderCategory>
+
+        <SafeAreaView>
+          <FlatList
+            data={dataProductsMegaSale}
+            renderItem={renderProduct}
+            keyExtractor={item => item.id}
+            horizontal={true}
+          />
+        </SafeAreaView>
+      </ContainerFlashSale>
+
     </Container>
   );
 }
