@@ -112,10 +112,11 @@ export const ProductContainer = styled.TouchableOpacity`
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    height: 150px;
+    height: 165px;
     width: 115px;
     margin-left: 15px;
     border: 1px solid #eee;
+    padding-bottom:15px;
 `
 
 export const TextDescont = styled.Text`
@@ -132,6 +133,6 @@ export const ContainerSale = styled.View`
 `
 
 export const ImageProduct = styled.Image`
-    height:70px;
+    height: 70px;
     width: 70px;
 `
