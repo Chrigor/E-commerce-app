@@ -118,6 +118,12 @@ export const ProductContainer = styled.TouchableOpacity`
     border: 1px solid #eee;
 `
 
+export const TextDescont = styled.Text`
+    color:red;
+    font-size:12;
+    padding-bottom:5px;
+`
+
 export const ContainerSale = styled.View`
     width: 100%;
     margin-bottom: 10px;

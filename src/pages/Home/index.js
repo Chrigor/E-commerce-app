@@ -23,7 +23,8 @@ import {
   TextCategory,
   ProductContainer,
   ContainerSale,
-  ImageProduct
+  ImageProduct,
+  TextDescont
 } from './style';
 
 const data = [
@@ -77,21 +78,21 @@ const dataCategory = [
 ]
 
 const dataProductsFlashSale = [
-  { id: 1, name: "Shoes", price: 170.32, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
-  { id: 2, name: "T-Shirt", price: 50.99, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
-  { id: 3, name: "PlayStation 4", price: 1999.00, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
-  { id: 4, name: "Computador gamer", price: 1500, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
-  { id: 5, name: "Pelucia", price: 10.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
-  { id: 6, name: "Armario", price: 599, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
+  { id: 1, name: "Shoes", price: 170.32, descont: 17, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
+  { id: 2, name: "T-Shirt", price: 50.99, descont: 13, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
+  { id: 3, name: "PlayStation 4", price: 1999.00, descont: 20, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
+  { id: 4, name: "Computador", price: 1500, descont: 15, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
+  { id: 5, name: "Pelucia", price: 10.99, descont: 10, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
+  { id: 6, name: "Armario", price: 599, descont: 13, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
 ]
 
 const dataProductsMegaSale = [
-  { id: 3, name: "PlayStation 4", price: 1999.00, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
-  { id: 4, name: "Computador gamer", price: 1500, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
-  { id: 6, name: "Armario", price: 599, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
-  { id: 1, name: "Shoes", price: 170.32, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
-  { id: 5, name: "Pelucia", price: 10.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
-  { id: 2, name: "T-Shirt", price: 50.99, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
+  { id: 3, name: "PlayStation 4", price: 1999.00, descont: 17, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkCgUZSRerRIwnBIy_ZaDC_MDrblpVlDK64WQk27mcFiTR8LHX&usqp=CAU" },
+  { id: 4, name: "Computador", price: 1500, descont: 17, image: "https://im.promobit.com.br/596936167515656316373820387704.jpg" },
+  { id: 6, name: "Armario", price: 599, descont: 17, image: "https://img.ijacotei.com.br/produtos/200/200/59/10/13991059.jpg" },
+  { id: 1, name: "Shoes", price: 170.32, descont: 17, image: "https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg" },
+  { id: 5, name: "Pelucia", price: 10.99, descont: 17, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXks0DE_KJG13MJ1fa2XoZ-tnLKtUlIUy_5fojcRaadkhsxwp&usqp=CAU" },
+  { id: 2, name: "T-Shirt", price: 50.99, descont: 17, image: "https://www.harlandclarkepromo.com/images/shared/catalog200x200/APPAREL1493819134/800_ebdcc9_p1-200x200.jpg" },
 ]
 
 function Home() {
@@ -122,10 +123,11 @@ function Home() {
 
   function renderProduct({ item }) {
     return (
-      <ProductContainer onPress={() => alert(item.name)}>
+      <ProductContainer onPress={() => alert(item.name)} activeOpacity={0.9}>
         <ImageProduct style={{ height: 70, width: 70 }} source={{ uri: item.image }} />
         <TextCategory>{item.name}</TextCategory>
         <TextCategory>R$ {(item.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</TextCategory>
+        <TextDescont>{(item.descont)}% OFF</TextDescont>
       </ProductContainer>
     )
   }
@@ -184,6 +186,7 @@ function Home() {
           inactiveDotOpacity={0.5}
           inactiveDotScale={0.8}
         />
+
       </ContainerSliders>
 
       <ContainerCategoria>
@@ -223,6 +226,7 @@ function Home() {
             horizontal={true}
           />
         </SafeAreaView>
+
       </ContainerSale>
 
       <ContainerSale>
