@@ -10,12 +10,17 @@ import {
   Header,
   IconMargin,
   ContainerSliders,
+  ContainerCategoria,
+  TitleCategory,
+  SubTitleCategory,
+  HeaderCategory
 } from './style';
 
-
-const data = [{ title: 'Hello1' }, { title: 'Hello2' }, { title: 'Hello3' }];
-
-
+const data = [
+  { title: 'Hello1', description: 'usaduhsahusaduhuhasduhhausuhsaduhsdauhasd' },
+  { title: 'Hello2', description: 'ASKDAS' },
+  { title: 'Hello3', description: 'asdkasjd' },
+];
 
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -23,9 +28,10 @@ function Home() {
 
   function _renderItem({ item, index }) {
     return (
-      <View style={{ flex: 1, backgroundColor: 'red' }}>
-        <ImageBackground source={BackgroundImage} style={{ flex: 1 }}>
-          <Text>{item.title}</Text>
+      <View style={{ flex: 1 }}>
+        <ImageBackground source={BackgroundImage} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ fontSize: 20, color:'#fff' }}>{item.title}</Text>
+          <Text style={{ fontSize: 15, width: 200 }}>{item.description}</Text>
         </ImageBackground>
       </View>
     );
@@ -65,19 +71,33 @@ function Home() {
         <Pagination
           dotsLength={data.length}
           activeDotIndex={activeSlide}
-          containerStyle={{ backgroundColor: '#333', paddingVertical: 5, width: widthDevice }}
+          containerStyle={{
+            backgroundColor: '#fff',
+            paddingVertical: 5,
+            width: widthDevice,
+          }}
           dotStyle={{
-            width: 5,
-            height: 5,
+            width: 7,
+            height: 7,
             borderRadius: 5,
             marginHorizontal: 8,
-            backgroundColor: 'rgba(255, 255, 255, 0.92)',
+            marginVertical: 8,
+            backgroundColor: '#e02041',
           }}
-          inactiveDotOpacity={0.4}
-          inactiveDotScale={0.6}
+          inactiveDotOpacity={0.5}
+          inactiveDotScale={0.8}
         />
       </ContainerSliders>
 
+      <ContainerCategoria>
+          
+          <HeaderCategory>
+            <TitleCategory>Category</TitleCategory>
+            <SubTitleCategory>More Category</SubTitleCategory>
+          </HeaderCategory>
+
+
+      </ContainerCategoria>
     </Container>
   );
 }

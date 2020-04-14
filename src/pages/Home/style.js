@@ -29,5 +29,32 @@ export const IconMargin = styled(Icon)`
 export const ContainerSliders = styled.View`
     height: 250px;
     width: 100%;
-    background: blue;
+    border: none;
+`
+
+export const ContainerCategoria = styled.View`
+    display:flex;
+    height:50px;
+    width: 100%;
+    margin-top:10px;
+`
+
+export const TitleCategory = styled.Text`
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 15px;
+`
+export const SubTitleCategory = styled.Text`
+    font-size: 17px;
+    font-weight: bold;
+    color:#e02041;
+    padding-right: 15px;
+`
+
+export const HeaderCategory = styled.View`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width: 100%;
 `

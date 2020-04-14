@@ -32,7 +32,7 @@ export default function Routes() {
       screenOptions={({route}) => settingsTab(route)}
       tabBarOptions={{
         activeTintColor: '#FFF',
-        inactiveTintColor: '#aaa',
+        inactiveTintColor: '#ccc',
         style: {
           backgroundColor: '#e02041',
         },
