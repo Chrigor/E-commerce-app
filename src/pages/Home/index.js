@@ -143,10 +143,10 @@ function Home() {
           inlineImagePadding={5}
           placeholder="Search Product"
         />
-        <TouchableOpacity onPress={() => alert('Click heart')}>
+        <TouchableOpacity onPress={() => navigation.navigate("FavoriteProducts")} activeOpacity={0.8}>
           <IconMargin name="heart" size={24} color="#ddd" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => alert('Click bell')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Notifications")} activeOpacity={0.8}>
           <IconMargin name="bell" size={24} color="#ddd" />
         </TouchableOpacity>
       </Header>
