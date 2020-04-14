@@ -112,7 +112,7 @@ export const ProductContainer = styled.TouchableOpacity`
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    height: 165px;
+    height: 170px;
     width: 115px;
     margin-left: 15px;
     border: 1px solid #eee;
@@ -121,7 +121,7 @@ export const ProductContainer = styled.TouchableOpacity`
 
 export const TextDescont = styled.Text`
     color:red;
-    font-size:12;
+    font-size:12px;
     padding-bottom:5px;
 `
 

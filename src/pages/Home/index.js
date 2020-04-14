@@ -3,6 +3,7 @@ import { View, Text, ImageBackground, FlatList, SafeAreaView, TouchableOpacity, 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
@@ -99,6 +100,8 @@ function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const widthDevice = Dimensions.get('screen').width;
 
+  const navigation = useNavigation();
+
   function _renderItem({ item, index }) {
     return (
       <ContainerImageSlider onPress={() => alert(item.title)} activeOpacity={1}>
@@ -154,7 +157,7 @@ function Home() {
           ref={(c) => {
             _carousel = c;
           }}
-          layout={'tinder'}
+          layout={'default'}
           data={data}
           renderItem={_renderItem}
           sliderWidth={widthDevice}
@@ -213,7 +216,7 @@ function Home() {
       <ContainerSale>
         <HeaderCategory>
           <TitleCategory>Flash Sale</TitleCategory>
-          <TouchableOpacity onPress={() => alert('See more flash sale')} activeOpacity={0.8}>
+          <TouchableOpacity onPress={() => navigation.navigate("Products", dataProductsFlashSale)} activeOpacity={0.8}>
             <SubTitleCategory>See more</SubTitleCategory>
           </TouchableOpacity>
         </HeaderCategory>
@@ -232,7 +235,7 @@ function Home() {
       <ContainerSale>
         <HeaderCategory>
           <TitleCategory>Mega Sale</TitleCategory>
-          <TouchableOpacity onPress={() => alert('See more mega sale')} activeOpacity={0.8}>
+          <TouchableOpacity onPress={() => navigation.navigate("Products", dataProductsMegaSale)} activeOpacity={0.8}>
             <SubTitleCategory>See more</SubTitleCategory>
           </TouchableOpacity>
         </HeaderCategory>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './pages/Home';
+import RoutesHome from './routesSub';
 import Cart from './pages/Cart';
 import Account from './pages/Account';
 import Explore from './pages/Explore';
@@ -38,7 +39,7 @@ export default function Routes() {
           backgroundColor: '#e02041',
         },
       }}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={RoutesHome} />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Cart" component={Cart} />
       <Tab.Screen name="Account" component={Account} />
