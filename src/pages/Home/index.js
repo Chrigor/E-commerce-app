@@ -30,7 +30,7 @@ const data = [
   { id: 2, title: 'Hello1', description: 'usaduhsahusaduhuhasduhhausuhsaduhsdauhasd', image: "https://png.pngtree.com/thumb_back/fw800/background/20190215/pngtree-blue-pure-color-simple-background-image_3724.jpg" },
   { id: 4, title: 'Hello2', description: 'ASKDAS', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTah2GGpiEWqBoLPGbjojgQrYgRHzRaqHWhAJwW7a1-rnih-fa&usqp=CAU" },
   { id: 5, title: 'Hello3', description: 'asdkasjd', image: "https://c4.wallpaperflare.com/wallpaper/829/213/283/red-color-simple-background-minimalism-buildings-black-art-wallpaper-preview.jpg" },
-  { id: 6, title: 'Hello3', description: 'asdkasjd', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBStLqMv5fIirCzb3ufL9eauqY7pYp6Pat0L_2pDxavVcvvPmy&usqp=CAU" },
+  { id: 6, title: 'Hello4', description: 'asdkasjd', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBStLqMv5fIirCzb3ufL9eauqY7pYp6Pat0L_2pDxavVcvvPmy&usqp=CAU" },
 ];
 
 const dataCategory = [
@@ -134,8 +134,8 @@ function Home() {
     <Container>
       <Header>
         <SearchInput
-          inlineImageLeft="icon"
-          inlineImagePadding={25}
+          inlineImageLeft="search"
+          inlineImagePadding={5}
           placeholder="Search Product"
         />
         <TouchableOpacity onPress={() => alert('Click heart')}>
@@ -152,7 +152,7 @@ function Home() {
           ref={(c) => {
             _carousel = c;
           }}
-          layout={'stack'}
+          layout={'tinder'}
           data={data}
           renderItem={_renderItem}
           sliderWidth={widthDevice}
