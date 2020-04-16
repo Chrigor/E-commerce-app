@@ -12,7 +12,7 @@ export const ContainerProduct = styled.View`
     padding: 2px 5px;
     flex-direction:row;
     justify-content:space-between;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     border-style: solid; 
     border-bottom-color: #eee; 
     border-bottom-width: 1px;
@@ -20,8 +20,8 @@ export const ContainerProduct = styled.View`
 
 export const ImageProduct = styled.Image`
     flex:1;
-    max-width:150px;
-    max-height:150px;
+    max-width:100px;
+    max-height:100px;
     margin-right: 15px;
 `
 

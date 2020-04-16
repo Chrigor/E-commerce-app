@@ -6,12 +6,12 @@ function Products() {
 
     const route = useRoute();
     console.log('--------------');
-    console.log(route.params);
+    const name = (route.params.name);
 
     return (
         <View>
             <Text>
-                Products
+                Product: {name}
             </Text>
         </View>
     );

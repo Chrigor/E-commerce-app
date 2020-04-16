@@ -215,6 +215,10 @@ function Home() {
 
   const navigation = useNavigation();
 
+  function navigateToProducts(product) {
+    navigation.navigate('Product', product);
+  }
+
   function _renderItem({ item, index }) {
     return (
       <ContainerImageSlider onPress={() => alert(item.title)} activeOpacity={1}>
@@ -239,7 +243,7 @@ function Home() {
 
   function renderProduct({ item }) {
     return (
-      <ProductContainer onPress={() => alert(item.name)} activeOpacity={0.9}>
+      <ProductContainer onPress={() => navigateToProducts(item)} activeOpacity={0.9}>
         <ImageProduct
           style={{ height: 70, width: 70 }}
           source={{ uri: item.image }}
