@@ -34,6 +34,8 @@ export const ContainerSliders = styled.View`
 
 export const ContainerImageSlider = styled.TouchableOpacity`
     flex:1;
+    min-height: 200px;
+    margin:10px 0px;
 `
 
 export const ContainerBackgroundImage = styled.ImageBackground`
