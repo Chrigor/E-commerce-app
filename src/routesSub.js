@@ -16,8 +16,8 @@ function Routes() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} options={optionsConfig}/>
           <Stack.Screen name="Products" component={Products} options={optionsConfig}/>
-          <Stack.Screen name="FavoriteProducts" component={FavoriteProducts} options={optionsConfig}/>
-          <Stack.Screen name="Notifications" component={Notifications} options={optionsConfig}/>
+          <Stack.Screen name="FavoriteProducts" component={FavoriteProducts}/>
+          <Stack.Screen name="Notifications" component={Notifications}/>
         </Stack.Navigator>
     );
   }
