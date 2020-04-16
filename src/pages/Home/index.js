@@ -247,7 +247,7 @@ function Home() {
         <TextCategory>{item.name}</TextCategory>
         <TextCategory>
           R${' '}
-          {item.price.toLocaleString('pt-BR', {
+          {String(item.price).toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL',
           })}

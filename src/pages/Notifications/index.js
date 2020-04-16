@@ -9,6 +9,8 @@ const notificationsExample = [
     { id: 2, nameIcon:'rocket' ,title: 'Teste Notification', description: 'testge notification, testge notification. testge notification testge notification testge notification' },
     { id: 3, nameIcon:'lock' ,title: 'Teste Notification', description: 'testge notification, testge notification. testge notification testge notification testge notification' },
     { id: 4, nameIcon:'user' ,title: 'Teste Notification', description: 'testge notification, testge notification. testge notification testge notification testge notification' },
+    { id: 5, nameIcon:'ambulance' ,title: 'Teste Notification', description: 'testge notification, testge notification. testge notification testge notification testge notification' },
+    { id: 6, nameIcon:'bitcoin' ,title: 'Teste Notification', description: 'testge notification, testge notification. testge notification testge notification testge notification' },
 ]
 
 function Notifications() {
@@ -20,7 +22,7 @@ function Notifications() {
 
     useEffect(() => {
         setNotificationsUser(notificationsExample);
-    }, [])
+    }, []);
 
     function renderNotification({ item }) {
         return (
@@ -39,17 +41,16 @@ function Notifications() {
 
     return (
         <Container>
-            <SafeAreaView>
                 {notificationsUser.length > 0 && <FlatList
                     data={notificationsExample}
                     renderItem={renderNotification}
                     keyExtractor={(item) => item.id}
                     horizontal={false}
+                    showsHorizontalScrollIndicator={false}
                 />}
                 {
                     notificationsUser.length <= 0 && <Text>You not have notifications</Text>
                 }
-            </SafeAreaView>
         </Container>
     );
 }

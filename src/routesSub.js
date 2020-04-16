@@ -8,16 +8,20 @@ import Notifications from './pages/Notifications';
 const Stack = createStackNavigator();
 
 const optionsConfig = {
-    headerShown: false
+    headerShown: true,
+    headerStyle: {
+      backgroundColor: '#e02041',
+    },
+    headerTintColor: '#fff',
 }
 
 function Routes() {
     return (
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={optionsConfig}/>
-          <Stack.Screen name="Products" component={Products} options={optionsConfig}/>
-          <Stack.Screen name="FavoriteProducts" component={FavoriteProducts}/>
-          <Stack.Screen name="Notifications" component={Notifications}/>
+          <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
+          <Stack.Screen name="Products" component={Products} options={{headerShown: false}}/>
+          <Stack.Screen name="FavoriteProducts" component={FavoriteProducts} options={optionsConfig}/>
+          <Stack.Screen name="Notifications" component={Notifications} options={optionsConfig}/>
         </Stack.Navigator>
     );
   }

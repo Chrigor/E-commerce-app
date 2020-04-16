@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-
-export const Container = styled.ScrollView`
+export const Container = styled.SafeAreaView`
     flex:1;
     background-color:rgba(255,255,255,0.7);
     padding: 15px 10px;
