@@ -9,9 +9,9 @@ export const Container = styled.SafeAreaView`
 export const ContainerProduct = styled.View`
     flex:1;
     height: 130px;
-    padding: 2px 5px;
+    padding: 5px;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content:space-around;
     margin-bottom: 18px;
     border-style: solid; 
     border-bottom-color: #eee; 

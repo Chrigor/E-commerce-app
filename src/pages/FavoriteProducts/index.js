@@ -79,7 +79,7 @@ function FavoriteProducts() {
           <Text>{item.description}</Text>
         </ContainerInfo>
         <TouchableOpacity onPress={() => alert(item.id)}>
-          <Icon name="trash" size={18} color="#e02041"/>
+          <Icon name="trash" size={22} color="#e02041"/>
         </TouchableOpacity>
       </ContainerProduct>
     );

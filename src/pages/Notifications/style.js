@@ -11,7 +11,7 @@ export const ContainerNotification = styled.TouchableOpacity`
     min-height: 120px;
     width: 100%;
     margin: 5px;
-    padding: 3px;
+    padding: 7px;
     border-style: solid; 
     border-bottom-color: #eee; 
     border-bottom-width: 1px;
