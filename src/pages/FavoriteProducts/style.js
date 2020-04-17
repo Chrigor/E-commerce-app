@@ -39,3 +39,14 @@ export const ContainerInfo = styled.View`
     max-width: 140px;
     align-items:flex-start;
 `
+
+export const Description = styled.Text`
+    flex:1;
+    width: 100%;
+    font-size: 15px;
+    max-height:auto;
+    min-height: 50px;
+    padding: 5px 10px; 
+    text-align:justify;
+    margin:0px 0px 15px 0px;
+`
