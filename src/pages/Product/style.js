@@ -139,3 +139,19 @@ export const ContainerInfo = styled.View`
     flex-direction:column;
     margin-left:13px;
 `
+
+export const ButtonAddToCart = styled.TouchableOpacity`
+    flex:1;
+    width:100%;
+    max-width: 350px;
+    margin: 40px;
+    padding: 15px 30px;
+    background-color: #e02041;
+    align-self: center;
+    border-radius: 12px;
+`
+export const TextButton = styled.Text`
+    text-align:center;
+    font-size:20px;
+    color:white;
+`

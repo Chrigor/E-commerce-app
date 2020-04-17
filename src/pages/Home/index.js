@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -68,7 +68,7 @@ const data = [
   },
 ];
 
-const dataCategory = [
+const dataCategory2 = [
   {
     id: 1,
     title: 'T-shirts',
@@ -127,120 +127,51 @@ const dataProductsFlashSale = [
     size: [6, 7, 8, 9, 10, 11, 12],
     colors: ['blue', 'yellow', 'gray', 'red'],
     stars: 3,
-    lastReview: {
-      idUser: 3,
-      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
-      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3
-    }
-  },
-  {
-    id: 2,
-    name: 'Generic Shoes',
-    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
-    image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-    ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
-    lastReview: {
-      idUser: 3,
-      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
-      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3
-    }
-  },
-  {
-    id: 3,
-    name: 'Generic Shoes',
-    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
-    image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-    ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
-    lastReview: {
-      idUser: 3,
-      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
-      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3
-    }
-  },
-]
-
-const dataProductsMegaSale = [
-  {
-    id: 1,
-    name: 'Generic Shoes',
-    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
-    image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-    ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
-    lastReview: {
-      idUser: 3,
-      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
-      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3
-    }
-  },
-  {
-    id: 2,
-    name: 'Generic Shoes',
-    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
-    image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-    ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
-    lastReview: {
-      idUser: 3,
-      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
-      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3
-    }
-  },
-  {
-    id: 3,
-    name: 'Generic Shoes',
-    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
-    image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-    ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
     lastReview: {}
+  },
+  {
+    id: 2,
+    name: 'Generic Shoes',
+    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
+    category: 'Shoes',
+    price: 170.32,
+    descont: 17,
+    image: [
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+    ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3,
+    lastReview: {
+      idUser: 3,
+      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
+      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
+      stars: 3
+    }
+  },
+  {
+    id: 3,
+    name: 'Generic Shoes',
+    description:'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
+    category: 'Shoes',
+    price: 170.32,
+    descont: 17,
+    image: [
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+    ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3,
+    lastReview: {
+      idUser: 3,
+      photo:'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
+      comment:'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
+      stars: 3
+    }
   },
 ]
 
@@ -248,7 +179,17 @@ function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const widthDevice = Dimensions.get('screen').width;
 
+  const [dataCarousel, setdataCarousel] = useState([]);
+  const [dataCategory, setdataCategory] = useState([]);
+  const [dataProducts, setdataProducts] = useState([]);
+
   const navigation = useNavigation();
+
+  useEffect(() => {
+    setdataCarousel(data);
+    setdataCategory(dataCategory2);
+    setdataProducts(dataProductsFlashSale);
+  }, []);
 
   function navigateToProducts(product) {
     navigation.navigate('Product', product);
@@ -322,7 +263,7 @@ function Home() {
             _carousel = c;
           }}
           layout={'default'}
-          data={data}
+          data={dataCarousel}
           renderItem={_renderItem}
           sliderWidth={widthDevice}
           itemWidth={widthDevice}
@@ -335,7 +276,7 @@ function Home() {
         />
 
         <Pagination
-          dotsLength={data.length}
+          dotsLength={dataCarousel.length}
           activeDotIndex={activeSlide}
           containerStyle={{
             backgroundColor: '#fff',
@@ -380,7 +321,7 @@ function Home() {
           <TitleCategory>Flash Sale</TitleCategory>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Products', dataProductsFlashSale)
+              navigation.navigate('Products', dataProducts)
             }
             activeOpacity={0.8}>
             <SubTitleCategory>See more</SubTitleCategory>
@@ -389,7 +330,7 @@ function Home() {
 
         <SafeAreaView>
           <FlatList
-            data={dataProductsFlashSale}
+            data={dataProducts}
             renderItem={renderProduct}
             keyExtractor={(item) => (item.id).toString()}
             horizontal={true}
@@ -402,7 +343,7 @@ function Home() {
           <TitleCategory>Mega Sale</TitleCategory>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Products', dataProductsMegaSale)
+              navigation.navigate('Products', dataProducts)
             }
             activeOpacity={0.8}>
             <SubTitleCategory>See more</SubTitleCategory>
@@ -411,14 +352,13 @@ function Home() {
 
         <SafeAreaView>
           <FlatList
-            data={dataProductsMegaSale}
+            data={dataProducts}
             renderItem={renderProduct}
             keyExtractor={(item) => (item.id).toString()}
             horizontal={true}
           />
         </SafeAreaView>
       </ContainerSale>
-
 
       <ContainerImageSlider onPress={() => alert('Products recommend for you')} activeOpacity={0.9}>
         <ContainerBackgroundImage source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMdwJ6eX2oxYZbGBEUtSv7GJE7fWSy4z77E-P1hCEwn0CNWmdK&usqp=CAU" }}>

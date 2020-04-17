@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView, TouchableOpacity, FlatList } from 'react-native';
+import { View, SafeAreaView, TouchableOpacity, FlatList, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useRoute } from '@react-navigation/native';
 import { Dimensions } from 'react-native';
@@ -21,7 +21,9 @@ import {
   ContainerHeaderReview,
   AvatarUser,
   ContainerInfo,
-  ContainerReview
+  ContainerReview,
+  ButtonAddToCart,
+  TextButton
 } from './style';
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -179,6 +181,10 @@ function Product() {
         }
 
       </ContainerSpecificProduct>
+
+      <ButtonAddToCart activeOpacity={0.9} onPress={() => alert(`Add to cart ${product.id}`)}>
+        <TextButton>Add to Cart </TextButton>
+      </ButtonAddToCart>
 
     </Container>
   );
