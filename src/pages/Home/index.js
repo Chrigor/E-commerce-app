@@ -114,7 +114,8 @@ const dataCategory = [
 const dataProductsFlashSale = [
   {
     id: 1,
-    name: 'Shoes',
+    name: 'Generic Shoes',
+    category: 'Shoes',
     price: 170.32,
     descont: 17,
     image: [
@@ -122,11 +123,14 @@ const dataProductsFlashSale = [
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
     ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
     stars: 3
   },
   {
     id: 2,
-    name: 'Shoes',
+    name: 'Generic Shoes',
+    category: 'Shoes',
     price: 170.32,
     descont: 17,
     image: [
@@ -134,14 +138,33 @@ const dataProductsFlashSale = [
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
     ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
     stars: 3
-  }
+  },
+  {
+    id: 3,
+    name: 'Generic Shoes',
+    category: 'Shoes',
+    price: 170.32,
+    descont: 17,
+    image: [
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+    ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3
+  },
+
 ];
 
 const dataProductsMegaSale =  [
   {
     id: 1,
-    name: 'Shoes',
+    name: 'Generic Shoes',
+    category: 'Shoes',
     price: 170.32,
     descont: 17,
     image: [
@@ -149,11 +172,14 @@ const dataProductsMegaSale =  [
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
     ],
-    stars: 4
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3
   },
   {
     id: 2,
-    name: 'Shoes',
+    name: 'Generic Shoes',
+    category: 'Shoes',
     price: 170.32,
     descont: 17,
     image: [
@@ -161,8 +187,26 @@ const dataProductsMegaSale =  [
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
       'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
     ],
-    stars: 5
-  }
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3
+  },
+  {
+    id: 3,
+    name: 'Generic Shoes',
+    category: 'Shoes',
+    price: 170.32,
+    descont: 17,
+    image: [
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+    ],
+    size: [6, 7, 8, 9, 10, 11, 12],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 3
+  },
+
 ];
 
 function Home() {
@@ -178,7 +222,7 @@ function Home() {
   function _renderItem({ item, index }) {
     return (
       <ContainerImageSlider onPress={() => alert(item.title)} activeOpacity={1}>
-        <ContainerBackgroundImage source={{ uri: item.image}}>
+        <ContainerBackgroundImage source={{ uri: item.image }}>
           <TitleSlide>{item.title}</TitleSlide>
           <SubTitleSlide>{item.description}</SubTitleSlide>
         </ContainerBackgroundImage>
@@ -290,7 +334,7 @@ function Home() {
           <FlatList
             data={dataCategory}
             renderItem={renderCategory}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => (item.id).toString()}
             horizontal={true}
           />
         </SafeAreaView>
@@ -312,7 +356,7 @@ function Home() {
           <FlatList
             data={dataProductsFlashSale}
             renderItem={renderProduct}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => (item.id).toString()}
             horizontal={true}
           />
         </SafeAreaView>
@@ -334,7 +378,7 @@ function Home() {
           <FlatList
             data={dataProductsMegaSale}
             renderItem={renderProduct}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => (item.id).toString()}
             horizontal={true}
           />
         </SafeAreaView>

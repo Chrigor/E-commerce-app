@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
     flex:1;
     background-color:rgba(255,255,255,0.7);
     padding: 15px 10px;
@@ -47,8 +47,60 @@ export const ContainerTitleProduct = styled.View`
     align-items:center;
 `
 
+export const CategoryButton = styled.TouchableOpacity`
+    flex:1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 70px;
+    margin: 5px 0px;
+`
+
+export const ContainerSize = styled.View`
+    flex:1;
+    border: 1px solid #ddd;
+    border-radius: 80px;
+    height: 70px;
+    width: 70px;
+    margin: 0px 10px;
+    padding: 5px; 
+    justify-content: center; 
+    align-items:center;
+`
+export const TextCategory = styled.Text`
+    font-size: 12px;
+    height: 20px;
+    margin: 5px;
+`
+
 export const ContainerStars = styled.View`
     height: 40px;
     width: 100%;
     flex-direction:row;
+`
+
+export const ContainerSpecificProduct = styled.View`
+    flex:1;
+    width:100%;
+    min-height: 100px;
+`
+
+export const TextSelect = styled.Text`
+    font-size: 18px;
+    font-weight:bold;
+    padding-bottom: 8px;
+    margin: 10px 0px;
+`
+
+export const ContainerColor = styled.View`
+    flex:1;
+    background-color: ${props => props.color};
+    border: 1px solid ${props => props.color};
+    border-radius: 80px;
+    height: 70px;
+    width: 70px;
+    margin: 0px 10px;
+    padding: 5px; 
+    justify-content: center; 
+    align-items:center;
 `
