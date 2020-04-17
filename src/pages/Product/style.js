@@ -53,7 +53,7 @@ export const CategoryButton = styled.TouchableOpacity`
     justify-content: center; 
     align-items: center;
     height: 70px;
-    margin: 5px 0px;
+    margin: 8px 0px;
 `
 
 export const ContainerSize = styled.View`

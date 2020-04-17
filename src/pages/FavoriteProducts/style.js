@@ -6,7 +6,7 @@ export const Container = styled.SafeAreaView`
     padding: 1px 10px;
 `
 
-export const ContainerProduct = styled.View`
+export const ContainerProduct = styled.TouchableOpacity`
     flex:1;
     height: 130px;
     padding: 5px;
