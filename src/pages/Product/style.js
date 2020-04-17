@@ -19,8 +19,9 @@ export const ContainerImageSlider = styled.View`
 `
 
 export const TitleSlide = styled.Text`
-    font-size: 20px;
-    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
 `
 
 export const SubTitleSlide = styled.Text`
@@ -33,4 +34,21 @@ export const ContainerBackgroundImage = styled.ImageBackground`
     flex: 1;
     justify-content: center;
     align-items: center;
+`
+
+export const ContainerTitleProduct = styled.View`
+    flex:1;
+    max-height: 70px;
+    width: 100%;
+    padding:5px 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 30px;
+    align-items:center;
+`
+
+export const ContainerStars = styled.View`
+    height: 40px;
+    width: 100%;
+    flex-direction:row;
 `
