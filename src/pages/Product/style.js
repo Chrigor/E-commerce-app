@@ -82,7 +82,8 @@ export const ContainerStars = styled.View`
 export const ContainerSpecificProduct = styled.View`
     flex:1;
     width:100%;
-    min-height: 100px;
+    min-height: 200px;
+    justify-content:center;
 `
 
 export const TextSelect = styled.Text`
@@ -103,4 +104,38 @@ export const ContainerColor = styled.View`
     padding: 5px; 
     justify-content: center; 
     align-items:center;
+`
+
+export const Description = styled.Text`
+    flex:1;
+    width: 100%;
+    font-size: 18px;
+    max-height:auto;
+    min-height: 50px;
+    padding: 5px 10px; 
+    text-align:justify;
+    margin:0px 0px 15px 0px;
+`
+
+export const ContainerHeaderReview = styled.View`
+    flex:1;
+    width:100%;
+    flex-direction:row;
+    align-items:center;
+    padding-bottom: 5px;
+`
+
+export const AvatarUser = styled.Image`
+    width: 70px;
+    height:70px;
+    padding:5px;
+    border-radius: 35px;
+`
+export const ContainerReview = styled.View`
+    flex:1;
+`
+
+export const ContainerInfo = styled.View`
+    flex-direction:column;
+    margin-left:13px;
 `

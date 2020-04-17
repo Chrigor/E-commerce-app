@@ -16,7 +16,12 @@ import {
   ContainerSize,
   TextCategory,
   TextSelect,
-  ContainerColor
+  ContainerColor,
+  Description,
+  ContainerHeaderReview,
+  AvatarUser,
+  ContainerInfo,
+  ContainerReview
 } from './style';
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -25,7 +30,7 @@ function Product() {
   const route = useRoute();
   const product = route.params;
 
-  const { image, colors, size } = product;
+  const { image, colors, size, lastReview } = product;
   const quantidadeStarts = product.stars;
 
   const [activeSlide, setActiveSlide] = useState(0);
@@ -54,7 +59,7 @@ function Product() {
   function renderColor({ item: color }) {
     return (
       <CategoryButton onPress={() => alert(color)}>
-        <ContainerColor color={color}/>
+        <ContainerColor color={color} />
       </CategoryButton>
     );
   }
@@ -138,6 +143,40 @@ function Product() {
             horizontal={true}
           />
         </SafeAreaView>
+
+        <TextSelect>Specification</TextSelect>
+        <Description>{product.description}</Description>
+
+        <TextSelect>Last Review Product</TextSelect>
+        {lastReview.idUser &&
+          <ContainerReview>
+            <ContainerHeaderReview>
+              <View>
+                <AvatarUser source={{ uri: lastReview.photo }} />
+              </View>
+              <ContainerInfo>
+                <TextSelect>{lastReview.idUser}</TextSelect>
+                <ContainerStars>
+                  {[1, 2, 3, 4, 5].map((e, i) => {
+                    return (
+                      <Icon
+                        name="star"
+                        color={i + 1 <= lastReview.stars ? '#FEDE00' : '#ddd'}
+                        size={25}
+                      />
+                    );
+                  })}
+                </ContainerStars>
+              </ContainerInfo>
+            </ContainerHeaderReview>
+
+            <Description>{lastReview.comment}</Description>
+          </ContainerReview>
+        }
+
+        {!lastReview.idUser &&
+            <Description>This product not have reviews ;(</Description>
+        }
 
       </ContainerSpecificProduct>
 

@@ -44,7 +44,7 @@ function Notifications() {
                 {notificationsUser.length > 0 && <FlatList
                     data={notificationsExample}
                     renderItem={renderNotification}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => (item.id).toString()}
                     horizontal={false}
                     showsHorizontalScrollIndicator={false}
                 />}

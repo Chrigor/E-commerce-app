@@ -91,7 +91,7 @@ function FavoriteProducts() {
         <FlatList
           data={products}
           renderItem={renderProducts}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => (item.id).toString()}
           horizontal={false}
           showsHorizontalScrollIndicator={false}
         />
