@@ -75,3 +75,17 @@ export const Quantity = styled.TextInput`
     color:black;
     text-align:center;
 `
+
+export const ContainerInfoOrder = styled.View`
+    min-height: 100px;
+    border-top-width:1px;
+    border-style: solid; 
+    border-top-color: #eee; 
+    border-top-width: 1px;
+`
+
+export const ContainerInfo = styled.View`
+    flex-direction:row;
+    justify-content:space-around;
+    padding:10px;
+`

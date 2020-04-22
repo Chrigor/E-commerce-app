@@ -21,7 +21,6 @@ function Routes() {
     return (
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-          <Stack.Screen name="Cart" component={Cart} options={{headerShown: false}}/>
           <Stack.Screen name="Product" component={Product} options={{headerShown: false}}/>
           <Stack.Screen name="Products" component={Products} />
           <Stack.Screen name="FavoriteProducts" component={FavoriteProducts} options={optionsConfig}/>
