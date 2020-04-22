@@ -42,7 +42,7 @@ function Product() {
 
   function _renderItem({ item, index }) {
     return (
-      <ContainerImageSlider>
+      <ContainerImageSlider key={index}>
         <ContainerBackgroundImage source={{ uri: String(item) }} />
       </ContainerImageSlider>
     );
