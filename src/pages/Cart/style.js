@@ -47,6 +47,7 @@ export const TextCategory = styled.Text`
     font-weight:bold;
     height: 20px;
     margin: 5px;
+    width:80px;
 `
 
 export const ContainerFlatList = styled.SafeAreaView`
@@ -77,7 +78,7 @@ export const Quantity = styled.TextInput`
 `
 
 export const ContainerInfoOrder = styled.View`
-    min-height: 100px;
+    min-height: 80px;
     border-top-width:1px;
     border-style: solid; 
     border-top-color: #eee; 
@@ -87,5 +88,21 @@ export const ContainerInfoOrder = styled.View`
 export const ContainerInfo = styled.View`
     flex-direction:row;
     justify-content:space-around;
-    padding:10px;
+    padding:5px;
+`
+
+export const ButtonCheckout = styled.TouchableOpacity`
+    width: 90%;
+    min-height:50px;
+    padding: 18px;
+    background-color: #e02041;
+    justify-content:center;
+    align-items:center;
+    border-radius: 8px;
+    margin: 5px 15px;
+`
+
+export const TextButton = styled.Text`
+    font-size:18px;
+    color:white;
 `

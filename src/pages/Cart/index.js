@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import { Container, Header, TitleHeader, Quantity, ContainerInfoOrder, ContainerInfo, ContainerNameAndPrice, ContainerQuantity, ContainerFlatList, ProductContainer, ImageProduct, TextCategory } from './style';
+import { Container, Header, TitleHeader, TextButton, ButtonCheckout, Quantity, ContainerInfoOrder, ContainerInfo, ContainerNameAndPrice, ContainerQuantity, ContainerFlatList, ProductContainer, ImageProduct, TextCategory } from './style';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
@@ -168,11 +168,11 @@ function Cart() {
 
         <ContainerQuantity>
           <TouchableOpacity onPress={() => alert('Minus')}>
-            <Icon name="plus" size={24} color="#7159c1" />
+            <Icon name="plus" size={24} color="#e02041" />
           </TouchableOpacity>
           <Quantity editable={false}>1</Quantity>
           <TouchableOpacity onPress={() => alert('Plus')}>
-            <Icon name="minus" size={24} color="#7159c1" />
+            <Icon name="minus" size={24} color="#e02041" />
           </TouchableOpacity>
 
         </ContainerQuantity>
@@ -189,7 +189,7 @@ function Cart() {
     <Container>
       <Header>
         <TitleHeader>Your Cart</TitleHeader>
-        <Icon name="shopping-cart" size={20} color="#7159c2" />
+        <Icon name="shopping-cart" size={20} color="#e02041" />
       </Header>
 
       {products.length <= 0 && <Text>Do you not have product into cart</Text>}
@@ -206,16 +206,26 @@ function Cart() {
           <TextCategory>Itens ({products.length})</TextCategory>
           <TextCategory>$ {1579} </TextCategory>
         </ContainerInfo>
+
         <ContainerInfo>
           <TextCategory>Shipping</TextCategory>
           <TextCategory>$ {40} </TextCategory>
         </ContainerInfo>
+
         <ContainerInfo>
           <TextCategory>Import changes</TextCategory>
           <TextCategory>$ {100} </TextCategory>
         </ContainerInfo>
+
+        <ContainerInfo>
+          <TextCategory>Total</TextCategory>
+          <TextCategory>$ {100} </TextCategory>
+        </ContainerInfo>
       </ContainerInfoOrder>
 
+      <ButtonCheckout onPress={() => alert('Checkout')}>
+        <TextButton>Checkout</TextButton>
+      </ButtonCheckout>
     </Container>
   );
 }
