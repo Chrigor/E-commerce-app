@@ -1,10 +1,12 @@
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
 import Product from './pages/Product';
 import Products from './pages/Products';
+import Order from './pages/Order';
+import Payment from './pages/Payment';
+import Profile from './pages/Profile';
+import Address from './pages/Address';
 import FavoriteProducts from './pages/FavoriteProducts';
 import Notifications from './pages/Notifications';
 import RouteSub from './routesSub';
@@ -27,6 +29,10 @@ function Routes() {
           <Stack.Screen name="Products" component={Products} />
           <Stack.Screen name="FavoriteProducts" component={FavoriteProducts} options={optionsConfig}/>
           <Stack.Screen name="Notifications" component={Notifications} options={optionsConfig}/>
+          <Stack.Screen name="Order" component={Order} options={optionsConfig}/>
+          <Stack.Screen name="Profile" component={Profile} options={optionsConfig}/>
+          <Stack.Screen name="Address" component={Address} options={optionsConfig}/>
+          <Stack.Screen name="Payment" component={Payment} options={optionsConfig}/>
         </Stack.Navigator>
     );
   }

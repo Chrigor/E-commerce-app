@@ -34,7 +34,7 @@ export default function Routes() {
       tabBarOptions={{
         activeTintColor: '#FFF',
         inactiveTintColor: '#ccc',
-        keyboardHidesTabBar:true,
+        keyboardHidesTabBar: true,
         style: {
           backgroundColor: '#e02041',
         },
@@ -46,4 +46,3 @@ export default function Routes() {
     </Tab.Navigator>
   );
 }
-
