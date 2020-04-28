@@ -149,7 +149,7 @@ function Cart() {
   const [products, setProducts] = useState([]);
   const navigation = useNavigation();
 
-  const productsCart = useSelector(state => state.cart.products);
+  const productsCart = useSelector(state => state.cart);
 
   function navigateToProducts(product) {
     navigation.navigate('Product', product);
@@ -185,8 +185,8 @@ function Cart() {
   }
 
   useEffect(() => {
-    setProducts(dataProductsSearchExample);
-  }, []);
+    setProducts(productsCart);
+  }, [productsCart]);
 
   return (
     <Container>
