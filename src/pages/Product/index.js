@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, TouchableOpacity, FlatList, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRoute } from '@react-navigation/native';
 import { Dimensions } from 'react-native';
 import {
@@ -27,10 +28,14 @@ import {
 } from './style';
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { addToCart } from '../../actions/Cart';
+
 
 function Product() {
   const route = useRoute();
   const product = route.params;
+
+  const dispatch = useDispatch();
 
   const { image, colors, size, lastReview } = product;
   const quantidadeStarts = product.stars;
@@ -39,6 +44,11 @@ function Product() {
   const [colorFavorite, setColorFavorite] = useState('#ccc');
 
   const widthDevice = Dimensions.get('screen').width;
+
+
+  function adicionarNoCarrinho(product){
+    dispatch(addToCart(product));
+  }
 
   function _renderItem({ item, index }) {
     return (
@@ -182,7 +192,7 @@ function Product() {
 
       </ContainerSpecificProduct>
 
-      <ButtonAddToCart activeOpacity={0.9} onPress={() => alert(`Add to cart ${product.id}`)}>
+      <ButtonAddToCart activeOpacity={0.9} onPress={() => adicionarNoCarrinho(product)}>
         <TextButton>Add to Cart </TextButton>
       </ButtonAddToCart>
 

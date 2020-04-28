@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Container, Header, TitleHeader, TextButton, ButtonCheckout, Quantity, ContainerInfoOrder, ContainerInfo, ContainerNameAndPrice, ContainerQuantity, ContainerFlatList, ProductContainer, ImageProduct, TextCategory } from './style';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector, useDispatch } from 'react-redux';
 
 const dataProductsSearchExample = [
   {
@@ -147,6 +148,8 @@ function Cart() {
 
   const [products, setProducts] = useState([]);
   const navigation = useNavigation();
+
+  const productsCart = useSelector(state => state.cart.products);
 
   function navigateToProducts(product) {
     navigation.navigate('Product', product);
