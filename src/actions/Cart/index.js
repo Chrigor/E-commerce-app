@@ -4,3 +4,11 @@ export function addToCart(product) {
         data: product,
     };
 }
+
+export function updateAmount(id, amount) {
+    return {
+        type: 'UPDATE_AMOUNT',
+        id,
+        amount
+    }
+}

@@ -4,6 +4,7 @@ import { Container, Header, TitleHeader, TextButton, ButtonCheckout, Quantity, C
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
+import { updateAmount } from '../../actions/Cart';
 
 const dataProductsSearchExample = [
   {
@@ -150,6 +151,15 @@ function Cart() {
   const navigation = useNavigation();
 
   const productsCart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+
+  function increment(product) {
+    dispatch(updateAmount(product.id, product.amount + 1));
+  }
+
+  function decrement(product) {
+    dispatch(updateAmount(product.id, product.amount - 1));
+  }
 
   function navigateToProducts(product) {
     navigation.navigate('Product', product);
@@ -170,12 +180,12 @@ function Cart() {
         </ContainerNameAndPrice>
 
         <ContainerQuantity>
-          <TouchableOpacity onPress={() => alert('Minus')}>
-            <Icon name="plus" size={24} color="#e02041" />
-          </TouchableOpacity>
-    <Quantity editable={false}>{item.amount}</Quantity>
-          <TouchableOpacity onPress={() => alert('Plus')}>
+          <TouchableOpacity onPress={() => decrement(item)}>
             <Icon name="minus" size={24} color="#e02041" />
+          </TouchableOpacity>
+          <Quantity editable={false}>{item.amount}</Quantity>
+          <TouchableOpacity onPress={() => increment(item)}>
+            <Icon name="plus" size={24} color="#e02041" />
           </TouchableOpacity>
 
         </ContainerQuantity>
