@@ -173,7 +173,7 @@ function Cart() {
           <TouchableOpacity onPress={() => alert('Minus')}>
             <Icon name="plus" size={24} color="#e02041" />
           </TouchableOpacity>
-          <Quantity editable={false}>1</Quantity>
+    <Quantity editable={false}>{item.amount}</Quantity>
           <TouchableOpacity onPress={() => alert('Plus')}>
             <Icon name="minus" size={24} color="#e02041" />
           </TouchableOpacity>
