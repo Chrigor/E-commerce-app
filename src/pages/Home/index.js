@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,11 +9,11 @@ import {
   Alert,
   Image,
 } from 'react-native';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
-import {Dimensions} from 'react-native';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {useNavigation} from '@react-navigation/native';
-import {useSelector, useDispatch} from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
   Container,
@@ -133,16 +133,38 @@ const dataProductsFlashSale = [
   },
   {
     id: 2,
-    name: 'Generic Shoes',
+    name: 'Pantuffs',
+    description:
+      'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    category: 'Shoes',
+    price: 130.32,
+    descont: 13,
+    image: [
+      'https://www.pantufas.com.br/arquivos/categorias_pantufas3d.png?v=636979505582000000',
+      'https://pantufas.vteximg.com.br/arquivos/ids/158303-400-400/pantufa-3d-garra-sulley-2019-frontal.jpg?v=636977748222170000',
+    ],
+    size: [35, 47, 74],
+    colors: ['blue', 'yellow', 'gray', 'red'],
+    stars: 4,
+    lastReview: {
+      idUser: 3,
+      photo:
+        'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
+      comment:
+        'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
+      stars: 3,
+    },
+  },
+  {
+    id: 3,
+    name: 'Play 4',
     description:
       'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
+    category: 'Video game',
+    price: 1820.32,
+    descont: 10,
     image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://www.havan.com.br/media/catalog/product/cache/55f334c6f9412d6b39cfe195ce4e3943/v/_/v_deo-game-playstation-4-bundle-hits-family_301631_1.jpg'
     ],
     size: [6, 7, 8, 9, 10, 11, 12],
     colors: ['blue', 'yellow', 'gray', 'red'],
@@ -157,28 +179,26 @@ const dataProductsFlashSale = [
     },
   },
   {
-    id: 3,
-    name: 'Generic Shoes',
+    id: 4,
+    name: 'Play TV',
     description:
       'Lorem ipsum ultricies eleifend sapien tristique ut eros, sapien aliquam velit venenatis ut potenti. habitasse senectus elit vestibulum aliquam cras pulvinar platea mauris euismod ligula accumsan, convallis sem metus rhoncus viverra augue gravida accumsan ultricies primis, cursus dapibus faucibus adipiscing nulla lectus sodales risus ut integer. accumsan dui potenti torquent dictum duis diam nisl, quam non platea nam massa porta, enim aenean cursus curae sociosqu condimentum. integer nostra id diam ultricies lectus mi proin, sodales nunc vel porta mattis ut ullamcorper aliquam, suscipit porttitor elit quis consequat pharetra. porta lacus curabitur diam tristique malesuada congue torquent nisi lectus, egestas et mi tellus praesent neque augue rutrum, enim posuere vitae aenean ultricies inceptos ut pulvinar.',
-    category: 'Shoes',
-    price: 170.32,
-    descont: 17,
+    category: 'Eletronicos',
+    price: 1020.32,
+    descont: 5,
     image: [
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
-      'https://d129q82p91aw7f.cloudfront.net/df2f90248bb2/tenis-dc-shoes-heathrow-imp-feminino-feminino.200x200.jpg',
+      'https://http2.mlstatic.com/smarttv-sony-32-led-hd-wi-fi-hdmi-smart-tv-televiso-nf-D_NQ_NP_650898-MLB31820114433_082019-F.jpg'
     ],
-    size: [6, 7, 8, 9, 10, 11, 12],
-    colors: ['blue', 'yellow', 'gray', 'red'],
-    stars: 3,
+    size: [40],
+    colors: ['black', 'gray'],
+    stars: 5,
     lastReview: {
       idUser: 3,
       photo:
         'https://img.pngio.com/png-avatar-108-images-in-collection-page-3-png-avatar-300_300.png',
       comment:
         'Turpis dictum fringilla et neque vitae quisque, condimentum tincidunt nec arcu dapibus class eu, molestie risus id sit faucibus. vestibulum odio ad vehicula donec netus posuere urna donec class,',
-      stars: 3,
+      stars: 5,
     },
   },
 ];
@@ -207,10 +227,10 @@ function Home() {
     navigation.navigate('Product', product);
   }
 
-  function _renderItem({item, index}) {
+  function _renderItem({ item, index }) {
     return (
       <ContainerImageSlider onPress={() => alert(item.title)} activeOpacity={1}>
-        <ContainerBackgroundImage source={{uri: item.image}}>
+        <ContainerBackgroundImage source={{ uri: item.image }}>
           <TitleSlide>{item.title}</TitleSlide>
           <SubTitleSlide>{item.description}</SubTitleSlide>
         </ContainerBackgroundImage>
@@ -218,7 +238,7 @@ function Home() {
     );
   }
 
-  function renderCategory({item}) {
+  function renderCategory({ item }) {
     return (
       <CategoryButton onPress={() => alert(item.nameIcon)}>
         <ContainerIconCategory>
@@ -229,14 +249,14 @@ function Home() {
     );
   }
 
-  function renderProduct({item}) {
+  function renderProduct({ item }) {
     return (
       <ProductContainer
         onPress={() => navigateToProducts(item)}
         activeOpacity={0.9}>
         <ImageProduct
-          style={{height: 70, width: 70}}
-          source={{uri: item.image[0]}}
+          style={{ height: 70, width: 70 }}
+          source={{ uri: item.image[0] }}
         />
         <TextCategory>{item.name}</TextCategory>
         <TextCategory>
